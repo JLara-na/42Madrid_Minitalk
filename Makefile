@@ -6,7 +6,7 @@
 #    By: jlara-na <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/16 18:15:15 by jlara-na          #+#    #+#              #
-#    Updated: 2023/12/16 20:29:19 by jlara-na         ###   ########.fr        #
+#    Updated: 2024/01/15 17:25:43 by jlara-na         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,8 +38,11 @@ LIBFT			:=		$(LFT_DIR)libft.a
 #-----------SRC FILES------------
 
 SRC_FILES_S		=		main			\
+						server_msg		\
 
 SRC_FILES_C		=		main			\
+						msg_sender		\
+						client_msg		\
 
 #---------SRC OBJ DEP INC---------
 
@@ -88,7 +91,7 @@ makelibs:
 
 -include	${DEPS_S}
 $(NAME_S):	$(OBJ_S)
-			@echo "\n$(BLUE)$(CC) $(CFLAGS) $(OBJ_S) $(LIBFT)  -o $(NAME_S)$(DEF_COLOR)\n"
+			@echo "\n$(BLUE)$(CC) $(CFLAGS) $(OBJ_S) $(LIBFT) -o $(NAME_S)$(DEF_COLOR)\n"
 			@$(CC) $(CFLAGS) $(OBJ_S) $(LIBFT) -o $(NAME_S)
 			@echo "$(GREEN)			✔SERVER COMPILED CORRECTLY\n$(DEF_COLOR)"
 
