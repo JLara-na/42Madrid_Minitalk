@@ -6,7 +6,7 @@
 /*   By: jlara-na <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 18:45:36 by jlara-na          #+#    #+#             */
-/*   Updated: 2024/01/15 18:24:38 by jlara-na         ###   ########.fr       */
+/*   Updated: 2024/01/20 20:50:41 by jlara-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,10 @@ static void	arrow_msg(char *pid)
 	ft_putstr_fd(MAGENTA_B, 1);
 	ft_putstr_fd(ARROW_MSG, 1);
 	ft_putstr_fd(WHITE, 1);
+	free(pid);
 }
 
-int	msg(int code, char *pid)
+int	msg_s(int code, char *pid)
 {
 	if (code == 0)
 		server_msg();

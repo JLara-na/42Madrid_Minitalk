@@ -6,7 +6,7 @@
 /*   By: jlara-na <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:19:29 by jlara-na          #+#    #+#             */
-/*   Updated: 2024/01/15 18:49:26 by jlara-na         ###   ########.fr       */
+/*   Updated: 2024/01/20 20:46:20 by jlara-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void	check_msg(char *pid)
 	ft_putstr_fd(GREEN, 1);
 	ft_putstr_fd(MSG_RECIVED, 1);
 	ft_putstr_fd(pid, 1);
-	ft_putstr_fd(DEF_COLOR, 1);
+	ft_putendl_fd(DEF_COLOR, 1);
 }
 
 static void	help_msg(void)
@@ -47,7 +47,7 @@ static void	help_msg(void)
 	ft_putendl_fd(DEF_COLOR, 1);
 }
 
-int	msg(int code, char *pid)
+int	msg_c(int code, char *pid)
 {
 	if (code == 0)
 		client_msg();

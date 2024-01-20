@@ -6,7 +6,7 @@
 /*   By: jlara-na <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 17:23:03 by jlara-na          #+#    #+#             */
-/*   Updated: 2024/01/15 17:46:29 by jlara-na         ###   ########.fr       */
+/*   Updated: 2024/01/20 20:51:39 by jlara-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	msg_sender(int pid, char *msg)
 	x = 0;
 	if (msg[0] == '\0')
 	{
-		ft_putendl_fd(ARG_HELP, 1);
+		msg_c(3, NULL);
 		terminate(ERROR_EMPTY_MSG);
 	}
 	len = ft_strlen(msg);

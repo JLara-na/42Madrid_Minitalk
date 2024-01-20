@@ -6,7 +6,7 @@
 /*   By: jlara-na <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 20:29:09 by jlara-na          #+#    #+#             */
-/*   Updated: 2024/01/15 18:42:33 by jlara-na         ###   ########.fr       */
+/*   Updated: 2024/01/20 20:50:33 by jlara-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef MINITALK_H
@@ -75,7 +75,8 @@
 //---------------FUNCTIONS---------------//
 
 void	terminate(char *error_msg);
-int		msg(int code, char *pid);
+int		msg_c(int code, char *pid);
+int		msg_s(int code, char *pid);
 void	msg_sender(int pid, char *msg);
 
 #endif

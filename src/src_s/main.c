@@ -6,12 +6,18 @@
 /*   By: jlara-na <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:26:33 by jlara-na          #+#    #+#             */
-/*   Updated: 2024/01/15 18:57:22 by jlara-na         ###   ########.fr       */
+/*   Updated: 2024/01/20 20:55:29 by jlara-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/minitalk.h"
-
+/*
+static void	leak(void)
+{
+	system("leaks -q server");
+}
+atexit(leak);
+*/
 void	terminate(char *error_msg)
 {
 	ft_putendl_fd(error_msg, 2);
@@ -54,7 +60,7 @@ static void	signal_handler(int signum, siginfo_t *info, void *x)
 	if (pid == 0)
 	{
 		pid = info->si_pid;
-		msg(2, ft_itoa(pid));
+		msg_s(2, ft_itoa(pid));
 	}
 	if (check_pid(pid, info->si_pid) == 1)
 		return ;
@@ -80,8 +86,9 @@ int	main(void)
 	sigaction(SIGUSR2, &sa, NULL);
 	sigaction(SIGINT, &sa, NULL);
 	pid = ft_itoa(getpid());
-	msg(0, pid);
-	msg(1, pid);
+	msg_s(0, pid);
+	msg_s(1, pid);
+	free(pid);
 	while (1)
 		;
 	return (0);
